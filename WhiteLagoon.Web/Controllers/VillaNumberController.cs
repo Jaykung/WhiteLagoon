@@ -40,7 +40,7 @@ namespace WhiteLagoon.Web.Controllers
         [HttpPost]
         public IActionResult Create(VillaNumber villaNumber)
         {
-            bool isVillaNumberExists = _unitOfWork.VillaNumber.GetAll().Any(v => v.Villa_Number == villaNumber.Villa_Number);
+            bool isVillaNumberExists = _unitOfWork.VillaNumber.Any(v => v.Villa_Number == villaNumber.Villa_Number);
 
             VillaNumberVM villaNumberVM = new VillaNumberVM()
             {
@@ -53,7 +53,7 @@ namespace WhiteLagoon.Web.Controllers
 
             if (isVillaNumberExists)
             {
-                TempData["error"] = "A villa number with this number already exists.";
+                TempData["error"] = $"The villa number {villaNumber.Villa_Number} already exists.";
                 return View(villaNumberVM);
             }
 
