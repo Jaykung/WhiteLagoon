@@ -16,6 +16,7 @@ namespace WhiteLagoon.Infrastructure.Data
 
         public DbSet<Villa> Villas { get; set; }
         public DbSet<VillaNumber> VillaNumbers { get; set; }
+        public DbSet<Amenity> Amenities { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -98,6 +99,51 @@ namespace WhiteLagoon.Infrastructure.Data
                 new VillaNumber
                 {
                     Villa_Number = 302,
+                    VillaId = 3,
+                }
+            );
+
+            modelBuilder.Entity<Amenity>().HasData(
+                new Amenity
+                {
+                    Id = 1,
+                    Name = "Private Pool",
+                    Description = "Enjoy your own private pool with stunning views.",
+                    VillaId = 1,
+                },
+                new Amenity
+                {
+                    Id = 2,
+                    Name = "Beach Access",
+                    Description = "Direct access to the beautiful beach.",
+                    VillaId = 1,
+                },
+                new Amenity
+                {
+                    Id = 3,
+                    Name = "Spa",
+                    Description = "Relax and rejuvenate at our on-site spa.",
+                    VillaId = 2,
+                },
+                new Amenity
+                {
+                    Id = 4,
+                    Name = "Gourmet Kitchen",
+                    Description = "Fully equipped kitchen for your culinary adventures.",
+                    VillaId = 2,
+                },
+                new Amenity
+                {
+                    Id = 5,
+                    Name = "Concierge Service",
+                    Description = "24/7 concierge service to assist with your needs.",
+                    VillaId = 3,
+                },
+                new Amenity
+                {
+                    Id = 6,
+                    Name = "Fitness Center",
+                    Description = "State-of-the-art fitness center for your workouts.",
                     VillaId = 3,
                 }
             );
