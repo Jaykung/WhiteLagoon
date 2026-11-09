@@ -36,6 +36,8 @@ namespace WhiteLagoon.Domain.Entities
         [NotMapped]
         public  IFormFile? Image { get; set; }
 
+        public IEnumerable<Amenity>? Amenities { get; set; }
+
         public string? ImageUrl { get; set; }
         public DateTime? CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }

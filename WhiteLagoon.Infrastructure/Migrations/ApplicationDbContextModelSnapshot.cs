@@ -22,6 +22,110 @@ namespace WhiteLagoon.Infrastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("WhiteLagoon.Domain.Entities.Amenity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("VillaId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("VillaId");
+
+                    b.ToTable("Amenities");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "Enjoy your own private pool with stunning views of the surrounding landscape.",
+                            Name = "Private Pool",
+                            VillaId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Description = "Convenient microwave for quick meals and snacks.",
+                            Name = "Microwave",
+                            VillaId = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Description = "Relax on your private balcony and take in the breathtaking scenery.",
+                            Name = "Private Balcony",
+                            VillaId = 1
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Description = "Spacious bedroom with a comfortable king bed and a sofa bed for additional guests.",
+                            Name = "1 king bed and 1 sofa bed",
+                            VillaId = 1
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Description = "Take a refreshing dip in your own private plunge pool, perfect for relaxation.",
+                            Name = "Private Plunge Pool",
+                            VillaId = 2
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Description = "Convenient microwave and mini refrigerator for storing and preparing your favorite snacks and beverages.",
+                            Name = "Microwave and Mini Refrigerator",
+                            VillaId = 2
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Description = "Enjoy the fresh air and beautiful views from your own private balcony.",
+                            Name = "Private Balcony",
+                            VillaId = 2
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Description = "Choose from a comfortable king bed or two double beds for a good night's sleep.",
+                            Name = "king bed or 2 double beds",
+                            VillaId = 2
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Description = "Enjoy your own private pool with stunning views of the surrounding landscape.",
+                            Name = "Private Pool",
+                            VillaId = 3
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Description = "Relax and unwind in your own private jacuzzi, perfect for a romantic evening or a soothing soak after a long day.",
+                            Name = "Jacuzzi",
+                            VillaId = 3
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Description = "Relax on your private balcony and take in the breathtaking scenery.",
+                            Name = "Private Balcony",
+                            VillaId = 3
+                        });
+                });
+
             modelBuilder.Entity("WhiteLagoon.Domain.Entities.Villa", b =>
                 {
                     b.Property<int>("Id")
@@ -156,6 +260,17 @@ namespace WhiteLagoon.Infrastructure.Migrations
                             Villa_Number = 302,
                             VillaId = 3
                         });
+                });
+
+            modelBuilder.Entity("WhiteLagoon.Domain.Entities.Amenity", b =>
+                {
+                    b.HasOne("WhiteLagoon.Domain.Entities.Villa", "Villa")
+                        .WithMany()
+                        .HasForeignKey("VillaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Villa");
                 });
 
             modelBuilder.Entity("WhiteLagoon.Domain.Entities.VillaNumber", b =>

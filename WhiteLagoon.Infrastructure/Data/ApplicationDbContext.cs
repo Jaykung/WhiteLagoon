@@ -104,49 +104,77 @@ namespace WhiteLagoon.Infrastructure.Data
             );
 
             modelBuilder.Entity<Amenity>().HasData(
-                new Amenity
-                {
-                    Id = 1,
-                    Name = "Private Pool",
-                    Description = "Enjoy your own private pool with stunning views.",
-                    VillaId = 1,
-                },
-                new Amenity
-                {
-                    Id = 2,
-                    Name = "Beach Access",
-                    Description = "Direct access to the beautiful beach.",
-                    VillaId = 1,
-                },
-                new Amenity
-                {
-                    Id = 3,
-                    Name = "Spa",
-                    Description = "Relax and rejuvenate at our on-site spa.",
-                    VillaId = 2,
-                },
-                new Amenity
-                {
-                    Id = 4,
-                    Name = "Gourmet Kitchen",
-                    Description = "Fully equipped kitchen for your culinary adventures.",
-                    VillaId = 2,
-                },
-                new Amenity
-                {
-                    Id = 5,
-                    Name = "Concierge Service",
-                    Description = "24/7 concierge service to assist with your needs.",
-                    VillaId = 3,
-                },
-                new Amenity
-                {
-                    Id = 6,
-                    Name = "Fitness Center",
-                    Description = "State-of-the-art fitness center for your workouts.",
-                    VillaId = 3,
-                }
-            );
+              new Amenity
+              {
+                  Id = 1,
+                  VillaId = 1,
+                  Name = "Private Pool",
+                  Description = "Enjoy your own private pool with stunning views of the surrounding landscape."
+              }, new Amenity
+              {
+                  Id = 2,
+                  VillaId = 1,
+                  Name = "Microwave",
+                  Description = "Convenient microwave for quick meals and snacks."
+              }, new Amenity
+              {
+                  Id = 3,
+                  VillaId = 1,
+                  Name = "Private Balcony",
+                  Description = "Relax on your private balcony and take in the breathtaking scenery."
+              }, new Amenity
+              {
+                  Id = 4,
+                  VillaId = 1,
+                  Name = "1 king bed and 1 sofa bed",
+                  Description = "Spacious bedroom with a comfortable king bed and a sofa bed for additional guests."
+              },
+
+              new Amenity
+              {
+                  Id = 5,
+                  VillaId = 2,
+                  Name = "Private Plunge Pool",
+                  Description = "Take a refreshing dip in your own private plunge pool, perfect for relaxation."
+              }, new Amenity
+              {
+                  Id = 6,
+                  VillaId = 2,
+                  Name = "Microwave and Mini Refrigerator",
+                  Description = "Convenient microwave and mini refrigerator for storing and preparing your favorite snacks and beverages."
+              }, new Amenity
+              {
+                  Id = 7,
+                  VillaId = 2,
+                  Name = "Private Balcony",
+                  Description = "Enjoy the fresh air and beautiful views from your own private balcony."
+              }, new Amenity
+              {
+                  Id = 8,
+                  VillaId = 2,
+                  Name = "king bed or 2 double beds",
+                  Description = "Choose from a comfortable king bed or two double beds for a good night's sleep."
+              },
+
+              new Amenity
+              {
+                  Id = 9,
+                  VillaId = 3,
+                  Name = "Private Pool",
+                  Description = "Enjoy your own private pool with stunning views of the surrounding landscape."
+              }, new Amenity
+              {
+                  Id = 10,
+                  VillaId = 3,
+                  Name = "Jacuzzi",
+                  Description = "Relax and unwind in your own private jacuzzi, perfect for a romantic evening or a soothing soak after a long day."
+              }, new Amenity
+              {
+                  Id = 11,
+                  VillaId = 3,
+                  Name = "Private Balcony",
+                  Description = "Relax on your private balcony and take in the breathtaking scenery."
+              });
         }
     }
 }

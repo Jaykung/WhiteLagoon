@@ -1,0 +1,34 @@
+﻿@model Villa
+
+<div class="row">
+    <div class="col-12 col-md-5">
+        <img src="@Model.ImageUrl" style="width:100%; border-radius:10px;" />
+    </div>
+    <div class="col-12 col-md-7">
+        <div class="row p-2">
+            <div class="col-12">
+                <p class="card-title text-warning" style="font-size:xx-large">@Model.Name</p>
+                <p class="card-text" style="font-size:large;">@Model.Description</p>
+                <p class="h5 text-white">Amenities</p>
+                <ul>
+                    @foreach (var amenity in Model.Amenities ?? Enumerable.Empty<Amenity>())
+                    {
+                        <li>@amenity.Name</li>
+                    }
+                </ul>
+            </div>
+        </div>
+        <div class="row col-12">
+            <span class="text-end p-0 pt-3 m-0">
+                <span class="float-end">Max Occupancy : @Model.Occupancy adults</span><br />
+                <span class="float-end pt-1">Villa Size : @Model.Sqft sqft</span><br />
+                <p class="text-warning fw-bold pt-1">
+                    USD
+                    <span>
+                        @Model.Price.ToString("c") / night
+                    </span>
+                </p>
+            </span>
+        </div>
+    </div>
+</div>
