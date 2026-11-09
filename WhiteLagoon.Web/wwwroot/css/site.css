@@ -20,3 +20,9 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+/* Reset the icon filters back to white inside dark mode */
+[data-bs-theme="dark"] .carousel {
+    --bs-carousel-control-icon-filter: none;
+    --bs-carousel-indicator-active-bg: #fff; /* Optional: fixes indicators too */
+}
